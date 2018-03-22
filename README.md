@@ -1,5 +1,5 @@
 # Openconnect with SSH Server #
-	This image's idea is to connect to a VPN using Openconnect and access the conatiner using SSH.
+This image's idea is to connect to a VPN using Openconnect and access the conatiner using SSH.
 ## Environment Variables ##
 * VPN_USER - Vpn user
 * VPN_PWD - Vpn password
