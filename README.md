@@ -1,11 +1,12 @@
 # Openconnect with SSH Server #
 This image's idea is to connect to a VPN using Openconnect and access the conatiner using SSH.
 ## Environment Variables ##
-* VPN_USER - Vpn user
-* VPN_PWD - Vpn password
-* VPN_GROUP - Vpn user group
-* VPN_CERT - Server cetificate
-* VPN_IP - Host IP
+* SSH_PWD - Set SSH password. Default value is 'default'.
+* VPN_USER - Vpn user.
+* VPN_PWD - Vpn password.
+* VPN_GROUP - Vpn user group.
+* VPN_CERT - Server cetificate.
+* VPN_IP - Host IP.
 
 ## Exposed Port ##
 Port 22 - SSH Server port
@@ -16,6 +17,7 @@ Export all variables and tunnel the SSH port:
 docker run -d --name vpn \
 	--privileged \
 	-p 2222:22 \
+	-e SSH_PWD='comein' \
 	-e VPN_USER='best_admin' \
 	-e VPN_PWD='supersecurepassword' \
 	-e VPN_GROUP='my_group' \
