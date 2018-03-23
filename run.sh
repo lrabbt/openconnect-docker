@@ -8,7 +8,7 @@ if [ "$SSH_PWD" != '' ]; then
 fi
 
 echo "Connecting to VPN"
-if [ "$DETACHED" = 'true' ]; then
+if [ "$DETACHED" = 'TRUE' ]; then
 	echo $VPN_PWD | openconnect -u "$VPN_USER" --passwd-on-stdin --authgroup="$VPN_GROUP" --servercert="$VPN_CERT" $VPN_IP
 else
 	echo $VPN_PWD | openconnect -u "$VPN_USER" --passwd-on-stdin --authgroup="$VPN_GROUP" --servercert="$VPN_CERT" $VPN_IP &
