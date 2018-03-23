@@ -25,3 +25,17 @@ docker run -d --name vpn \
 	-e VPN_IP='https://192.168.0.56' \
 	lrabbt/openconnect-ssh
 ```
+If you want to run 'bash' directly on 'docker run', you need to pass 'DETACHED' environment variable:
+```bash
+docker run -it --name vpn \
+	--privileged \
+	-p 2222:22 \
+	-e DETACHED='false' \
+	-e SSH_PWD='comein' \
+	-e VPN_USER='best_admin' \
+	-e VPN_PWD='supersecurepassword' \
+	-e VPN_GROUP='my_group' \
+	-e VPN_CERT='sha1:b8a490b3b85b0ec3a200f952eb6966765c1c1eda' \
+	-e VPN_IP='https://192.168.0.56' \
+	lrabbt/openconnect-ssh
+```
